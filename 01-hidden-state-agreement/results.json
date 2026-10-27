@@ -1,0 +1,233 @@
+{
+  "exp1": {
+    "trained_mean": 0.37519499271579043,
+    "random_mean": 0.11805710917305665,
+    "trained_gt_random_fraction": 1.0,
+    "trained_max": 0.4349500238895416
+  },
+  "exp2": [
+    {
+      "pair": "Pythia-160M x BERT-base",
+      "|depth difference|": "0.00-0.10",
+      "trained": 0.40844191409446096,
+      "random": 0.11898108974501893,
+      "cells": 37
+    },
+    {
+      "pair": "Pythia-160M x BERT-base",
+      "|depth difference|": "0.10-0.25",
+      "trained": 0.39603271507299864,
+      "random": 0.11975577688561036,
+      "cells": 26
+    },
+    {
+      "pair": "Pythia-160M x BERT-base",
+      "|depth difference|": "0.25-0.50",
+      "trained": 0.37377594963267996,
+      "random": 0.11698287918611809,
+      "cells": 54
+    },
+    {
+      "pair": "Pythia-160M x BERT-base",
+      "|depth difference|": "0.50-1.00",
+      "trained": 0.342593289911747,
+      "random": 0.11766587412701203,
+      "cells": 52
+    },
+    {
+      "pair": "Pythia-160M x MiniLM-L6",
+      "|depth difference|": "0.00-0.10",
+      "trained": 0.3718815947833814,
+      "random": 0.12073290289232605,
+      "cells": 19
+    },
+    {
+      "pair": "Pythia-160M x MiniLM-L6",
+      "|depth difference|": "0.10-0.25",
+      "trained": 0.36293930241039823,
+      "random": 0.12102500987904412,
+      "cells": 14
+    },
+    {
+      "pair": "Pythia-160M x MiniLM-L6",
+      "|depth difference|": "0.25-0.50",
+      "trained": 0.3380410937326295,
+      "random": 0.11887233052402735,
+      "cells": 28
+    },
+    {
+      "pair": "Pythia-160M x MiniLM-L6",
+      "|depth difference|": "0.50-1.00",
+      "trained": 0.305828358232975,
+      "random": 0.12198000848293304,
+      "cells": 30
+    },
+    {
+      "pair": "BERT-base x MiniLM-L6",
+      "|depth difference|": "0.00-0.10",
+      "trained": 0.4263289727662739,
+      "random": 0.12919606268405914,
+      "cells": 19
+    },
+    {
+      "pair": "BERT-base x MiniLM-L6",
+      "|depth difference|": "0.10-0.25",
+      "trained": 0.41028217119829996,
+      "random": 0.13116965230022157,
+      "cells": 14
+    },
+    {
+      "pair": "BERT-base x MiniLM-L6",
+      "|depth difference|": "0.25-0.50",
+      "trained": 0.3793910944036075,
+      "random": 0.12671518698334694,
+      "cells": 28
+    },
+    {
+      "pair": "BERT-base x MiniLM-L6",
+      "|depth difference|": "0.50-1.00",
+      "trained": 0.3269950161377589,
+      "random": 0.13482167658706506,
+      "cells": 30
+    }
+  ],
+  "exp3": {
+    "tfidf": [
+      {
+        "model": "Pythia-160M",
+        "min": 0.18394997715950012,
+        "max": 0.31095001101493835,
+        "mean": 0.22443846326607925
+      },
+      {
+        "model": "BERT-base",
+        "min": 0.18975000083446503,
+        "max": 0.2903500199317932,
+        "mean": 0.2335615444641847
+      },
+      {
+        "model": "MiniLM-L6",
+        "min": 0.1814499944448471,
+        "max": 0.3102000057697296,
+        "mean": 0.2366714264665331
+      }
+    ],
+    "best_pair_vs_lexical_ratio": 1.8340713748974464
+  },
+  "exp4": [
+    {
+      "metric": "kNN, raw",
+      "trained mean": 0.28187043233030645,
+      "random mean": 0.09630207812204164,
+      "mean diff": 0.18556835420826484,
+      "trained > random": "100%"
+    },
+    {
+      "metric": "CKA, raw",
+      "trained mean": 0.46239413197576645,
+      "random mean": 0.39234523254738757,
+      "mean diff": 0.0700488994283789,
+      "trained > random": "57%"
+    },
+    {
+      "metric": "kNN, standardized",
+      "trained mean": 0.37519499271579043,
+      "random mean": 0.11805710917305665,
+      "mean diff": 0.25713788354273376,
+      "trained > random": "100%"
+    },
+    {
+      "metric": "CKA, standardized",
+      "trained mean": 0.7440464919840796,
+      "random mean": 0.28242961718485904,
+      "mean diff": 0.46161687479922053,
+      "trained > random": "100%"
+    }
+  ],
+  "exp5": [
+    {
+      "rel. depth": 0.25,
+      "trained": 0.4150642454624176,
+      "random BERT": 0.17676017060875893,
+      "Pythia-160M-TFIDF": 0.22844960540533066,
+      "BERT-base-TFIDF": 0.28864317387342453
+    },
+    {
+      "rel. depth": 0.5,
+      "trained": 0.4017285704612732,
+      "random BERT": 0.15496265143156052,
+      "Pythia-160M-TFIDF": 0.19484733790159225,
+      "BERT-base-TFIDF": 0.22783119976520538
+    },
+    {
+      "rel. depth": 0.75,
+      "trained": 0.3876141607761383,
+      "random BERT": 0.13485330995172262,
+      "Pythia-160M-TFIDF": 0.2399979829788208,
+      "BERT-base-TFIDF": 0.20454378798604012
+    },
+    {
+      "rel. depth": 1.0,
+      "trained": 0.40720343589782715,
+      "random BERT": 0.12046156451106071,
+      "Pythia-160M-TFIDF": 0.2769765891134739,
+      "BERT-base-TFIDF": 0.2503909468650818
+    }
+  ],
+  "exp6": {
+    "selected": [
+      11,
+      11
+    ],
+    "explore_score": 0.48190000653266907,
+    "confirm": [
+      {
+        "comparison": "Pythia-160M x BERT-base (selected pair)",
+        "mean": 0.4972000061646104,
+        "ci_low": 0.48569750602915884,
+        "ci_high": 0.5088000064313412
+      },
+      {
+        "comparison": "Pythia-160M x random BERT-base",
+        "mean": 0.09225000170245766,
+        "ci_low": 0.08514750186624005,
+        "ci_high": 0.10035000159377232
+      },
+      {
+        "comparison": "Pythia-160M x TF-IDF",
+        "mean": 0.24920000445842744,
+        "ci_low": 0.23780000435337423,
+        "ci_high": 0.2609000046515837
+      },
+      {
+        "comparison": "BERT-base x TF-IDF",
+        "mean": 0.236900004260242,
+        "ci_low": 0.22549750412590802,
+        "ci_high": 0.2485025046478957
+      }
+    ]
+  },
+  "exp7": [
+    {
+      "pair": "Pythia-160M x BERT-base",
+      "matched-depth trained": 0.40844191409446096,
+      "matched-depth random": 0.11898108974501893,
+      "ratio": 3.4328305024753742,
+      "highest cell": 0.4349500238895416
+    },
+    {
+      "pair": "Pythia-160M x MiniLM-L6",
+      "matched-depth trained": 0.3718815947833814,
+      "matched-depth random": 0.12073290289232605,
+      "ratio": 3.080200888692611,
+      "highest cell": 0.41225001215934753
+    },
+    {
+      "pair": "BERT-base x MiniLM-L6",
+      "matched-depth trained": 0.4263289727662739,
+      "matched-depth random": 0.12919606268405914,
+      "ratio": 3.299860412997528,
+      "highest cell": 0.5177000164985657
+    }
+  ]
+}
