@@ -1,0 +1,71 @@
+SETUP: 2000 AG News texts, k=10, chance ~ 0.5%, models: Pythia-160M, BERT-base, MiniLM-L6, random seeds: 2
+Representation: per-layer mean pooling, z-scored dimensions unless stated otherwise.
+
+EXPERIMENT 1: cross-layer agreement, Pythia-160M x BERT-base
+  trained: mean 0.375  min 0.264  max 0.435
+  random control: mean 0.118  max 0.186
+  trained minus random: mean +0.257, trained higher in 100% of layer pairs
+  five highest layer pairs (descriptive only; see Experiment 6 for held-out confirmation):
+    Pythia-160M 11 x BERT-base 11: 0.435
+    Pythia-160M  9 x BERT-base  5: 0.435
+    Pythia-160M  0 x BERT-base  1: 0.434
+    Pythia-160M 10 x BERT-base 11: 0.434
+    Pythia-160M 11 x BERT-base  2: 0.433
+
+EXPERIMENT 2: mean agreement by relative-depth gap (trained vs random control)
+                   pair |depth difference|  trained  random  cells
+Pythia-160M x BERT-base          0.00-0.10    0.408   0.119     37
+Pythia-160M x BERT-base          0.10-0.25    0.396   0.120     26
+Pythia-160M x BERT-base          0.25-0.50    0.374   0.117     54
+Pythia-160M x BERT-base          0.50-1.00    0.343   0.118     52
+Pythia-160M x MiniLM-L6          0.00-0.10    0.372   0.121     19
+Pythia-160M x MiniLM-L6          0.10-0.25    0.363   0.121     14
+Pythia-160M x MiniLM-L6          0.25-0.50    0.338   0.119     28
+Pythia-160M x MiniLM-L6          0.50-1.00    0.306   0.122     30
+  BERT-base x MiniLM-L6          0.00-0.10    0.426   0.129     19
+  BERT-base x MiniLM-L6          0.10-0.25    0.410   0.131     14
+  BERT-base x MiniLM-L6          0.25-0.50    0.379   0.127     28
+  BERT-base x MiniLM-L6          0.50-1.00    0.327   0.135     30
+
+EXPERIMENT 3: agreement with TF-IDF neighbours
+      model   min   max  mean
+Pythia-160M 0.184 0.311 0.224
+  BERT-base 0.190 0.290 0.234
+  MiniLM-L6 0.181 0.310 0.237
+  highest Pythia-160M-BERT-base pair: 0.435 vs 0.237 for the more lexical of its two layers (1.83x)
+
+EXPERIMENT 4: does the metric rank trained models above a random network?
+           metric  trained mean  random mean  mean diff trained > random
+         kNN, raw         0.282        0.096      0.186             100%
+         CKA, raw         0.462        0.392      0.070              57%
+kNN, standardized         0.375        0.118      0.257             100%
+CKA, standardized         0.744        0.282      0.462             100%
+
+EXPERIMENT 5: within-topic agreement (k=5), averaged over topics
+            trained  random BERT  Pythia-160M-TFIDF  BERT-base-TFIDF
+rel. depth                                                          
+0.25          0.415        0.177              0.228            0.289
+0.50          0.402        0.155              0.195            0.228
+0.75          0.388        0.135              0.240            0.205
+1.00          0.407        0.120              0.277            0.250
+
+EXPERIMENT 6: held-out confirmation
+  pair selected on explore half: Pythia-160M layer 11 x BERT-base layer 11 (explore score 0.482)
+                             comparison  mean  ci_low  ci_high
+Pythia-160M x BERT-base (selected pair) 0.497   0.486    0.509
+         Pythia-160M x random BERT-base 0.092   0.085    0.100
+                   Pythia-160M x TF-IDF 0.249   0.238    0.261
+                     BERT-base x TF-IDF 0.237   0.225    0.249
+  chance on held-out half ~ 1.0%
+
+EXPERIMENT 7: matched-depth agreement for each model pair
+                   pair  matched-depth trained  matched-depth random  ratio  highest cell
+Pythia-160M x BERT-base                  0.408                 0.119  3.433         0.435
+Pythia-160M x MiniLM-L6                  0.372                 0.121  3.080         0.412
+  BERT-base x MiniLM-L6                  0.426                 0.129  3.300         0.518
+
+LIMITATIONS
+  - One dataset (AG News, English, 4 topics), mean pooling only, k-NN overlap as the main metric.
+  - Agreement in neighbour structure does not by itself show shared meaning or shared features.
+  - 2 random-initialisation seed(s) per architecture; one data sample.
+  - Hidden states were standardized per dimension; raw results are reported in Experiment 4.
