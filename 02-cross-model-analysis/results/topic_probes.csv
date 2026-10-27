@@ -1,0 +1,5 @@
+model,accuracy
+Pythia,0.868
+BERT,0.88
+MiniLM,0.832
+Random BERT,0.576
