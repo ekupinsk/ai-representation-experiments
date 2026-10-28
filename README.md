@@ -8,7 +8,7 @@ A collection of reproducible exploratory studies on language-model hidden states
 |---|---|---|
 | [01-hidden-state-agreement](01-hidden-state-agreement/) | Pythia, BERT, and MiniLM nearest-neighbour agreement, depth effects, lexical and random controls | Results recorded, notebook available |
 | [02-cross-model-analysis](02-cross-model-analysis/) | Expanded comparison across model families | Executed; notebook and CSV results available |
-| 03-hidden-state-classification | Probes, PCA, ICA, and sparse autoencoders | Planned |
+| [03-hidden-state-classification](03-hidden-state-classification/) | Probes, PCA, ICA, and sparse autoencoders | Executed; results and charts available |
 | 04-visual-counting | CNN shape counting and generalization | Planned |
 
 The analysis treats neighbour overlap as **representational geometry**, not direct evidence of identical semantics. See each study's README for assumptions and caveats.
