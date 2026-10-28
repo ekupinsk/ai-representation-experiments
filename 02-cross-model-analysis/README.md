@@ -83,3 +83,7 @@ These are **summary SVG charts reconstructed from the exported CSV values**, rat
 ![STS-B at relative depth 0.9](figures/sts_paws.svg)
 
 For PAWS and the best observed STS-B/PAWS scores, use [sts_paws.csv](results/sts_paws.csv). The SVG above shows *only* STS-B at relative depth 0.9, not PAWS.
+
+## Executed Google Colab notebook
+
+[View executed notebook with saved outputs](https://colab.research.google.com/drive/1dTj56VHA-SmKQvueUFHWCe4D4Wl4ahoU?usp=sharing) — the shared Colab copy showing the experiment run. For the version-controlled source, use the notebook linked above in this repository. The shared notebook is viewable without signing in (checked by the repository owner in a private browsing window).
