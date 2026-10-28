@@ -1,0 +1,135 @@
+{
+  "args": {
+    "head": "density",
+    "n_train": 60000,
+    "n_test": 3000,
+    "epochs": 15,
+    "batch": 256,
+    "lr": 0.002,
+    "width": 32,
+    "workers": 2,
+    "out": "runs/shapes_study/density",
+    "seed": 0
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.04233992444828917,
+      "val_exact_acc": 0.678
+    },
+    {
+      "epoch": 2,
+      "loss": 0.009100633752970105,
+      "val_exact_acc": 0.9383333333333334
+    },
+    {
+      "epoch": 3,
+      "loss": 0.003967460900103339,
+      "val_exact_acc": 0.96
+    },
+    {
+      "epoch": 4,
+      "loss": 0.003980401405392008,
+      "val_exact_acc": 0.956
+    },
+    {
+      "epoch": 5,
+      "loss": 0.002292619258688731,
+      "val_exact_acc": 0.9973333333333333
+    },
+    {
+      "epoch": 6,
+      "loss": 0.0011982130820556488,
+      "val_exact_acc": 0.9986666666666667
+    },
+    {
+      "epoch": 7,
+      "loss": 0.0006390942031026094,
+      "val_exact_acc": 0.9996666666666667
+    },
+    {
+      "epoch": 8,
+      "loss": 0.0004297800834238943,
+      "val_exact_acc": 1
+    },
+    {
+      "epoch": 9,
+      "loss": 0.00036558751224562066,
+      "val_exact_acc": 1
+    },
+    {
+      "epoch": 10,
+      "loss": 0.0003163379435260824,
+      "val_exact_acc": 1
+    },
+    {
+      "epoch": 11,
+      "loss": 0.00023836244611466565,
+      "val_exact_acc": 1
+    },
+    {
+      "epoch": 12,
+      "loss": 0.0001696153972922271,
+      "val_exact_acc": 1
+    },
+    {
+      "epoch": 13,
+      "loss": 0.00013889402488040595,
+      "val_exact_acc": 1
+    },
+    {
+      "epoch": 14,
+      "loss": 0.00011212103553643673,
+      "val_exact_acc": 1
+    },
+    {
+      "epoch": 15,
+      "loss": 0.00009987225768362315,
+      "val_exact_acc": 1
+    }
+  ],
+  "results": {
+    "in_distribution (0-5 shapes)": {
+      "total_count_exact_acc": 1,
+      "total_count_mae": 0.050701770931482315,
+      "per_class_mae": 0.007825733162462711,
+      "full_grid_exact_acc": 1,
+      "n": 3000,
+      "acc_by_true_count": {
+        "0": 1,
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1
+      }
+    },
+    "more_shapes (6-8 shapes)": {
+      "total_count_exact_acc": 0.9996666666666667,
+      "total_count_mae": 0.08492711931467056,
+      "per_class_mae": 0.018110869452357292,
+      "full_grid_exact_acc": 0.9996666666666667,
+      "n": 3000,
+      "acc_by_true_count": {
+        "6": 0.9989837398373984,
+        "7": 1,
+        "8": 1
+      }
+    },
+    "overlapping (0-5 shapes)": {
+      "total_count_exact_acc": 0.802,
+      "total_count_mae": 0.3283826410770416,
+      "per_class_mae": 0.03320198506116867,
+      "full_grid_exact_acc": 0.802,
+      "n": 3000,
+      "acc_by_true_count": {
+        "0": 1,
+        "1": 1,
+        "2": 0.9223107569721115,
+        "3": 0.8008298755186722,
+        "4": 0.6196319018404908,
+        "5": 0.4473684210526316
+      }
+    }
+  }
+}
