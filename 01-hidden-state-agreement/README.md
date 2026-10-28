@@ -1,9 +1,11 @@
 # Study 01 — Hidden-State Agreement
 
-## Research question
+## 1. What did we want to discover? — Research hypothesis
 Do independently trained language models organize the same texts into similar nearest-neighbour structures? How does agreement vary by layer, normalization, and comparison baseline?
 
-## Methods
+**Hypothesis:** Independently trained models may preserve partly overlapping nearest-neighbour relationships among the same texts; this agreement should exceed random-initialization and lexical baselines, and could depend on relative layer depth.
+
+## 2. How did we test it? — Experiments, metrics and controls
 - **Dataset:** 2,000 AG News texts (English; four news topics).
 - **Models:** Pythia-160M, BERT-base, MiniLM-L6; random-initialization controls.
 - **Representations:** per-layer token mean pooling; per-dimension z-scoring except where noted.
@@ -11,7 +13,15 @@ Do independently trained language models organize the same texts into similar ne
 - **Validation:** explore/held-out confirmation split for a selected layer pair.
 - **Runtime:** Google Colab; notebook requires an internet connection to download pretrained models and data.
 
-## Results
+### Experimental design
+
+The seven experiments include a cross-layer sweep, relative-depth comparisons, a TF-IDF baseline, raw versus standardized metric checks, within-topic comparisons, selection on an exploratory split with confirmation on a separate half, and comparisons involving MiniLM.
+
+**Controls:** randomly initialized networks and TF-IDF neighbour sets. **Metrics:** kNN overlap and linear CKA (with RSA reserved for the broader second study). These metrics assess representation geometry, not semantic identity.
+
+## 3. What did we learn? — Results, interpretation and limitations
+
+### Observed results
 
 | Experiment | Observation |
 |---|---|
@@ -34,7 +44,11 @@ Full machine-readable values: [results.json](results.json). Full console summary
 
 The notebook in the repository is the **clean, unexecuted analysis version**. The numeric results were obtained in a separately executed Colab run; they have not been regenerated from this GitHub copy yet.
 
-## Important limitations
+### Interpretation
+
+Trained models share more neighbourhood structure than the controls in this experiment. Agreement is not uniform across layers, and standardizing dimensions substantially changes some metric outcomes. The held-out selected pair provides a check against reporting only the best cell in the initial scan.
+
+### Limitations
 - Neighbour agreement alone **does not establish shared semantics or identical internal features**.
 - Results are from one English news dataset, mean pooling, one text sample, and two random seeds per architecture.
 - Relative depth correlations are descriptive and are not evidence of causal relationships.
