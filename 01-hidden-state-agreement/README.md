@@ -89,3 +89,7 @@ The following **SVG figures were reconstructed from the numeric values in `resul
 ### Matched-depth comparison
 
 ![Matched-depth comparison](figures/exp7_three_models.svg)
+
+## Executed Google Colab notebook
+
+[View executed notebook with saved outputs](https://colab.research.google.com/drive/1gCnrzYQZJookiuGaVfqZCgGcJsF01Ys_?usp=sharing) — the shared Colab copy showing the experiment run. For the version-controlled source, use the notebook linked above in this repository. The shared notebook is viewable without signing in (checked by the repository owner in a private browsing window).
