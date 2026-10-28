@@ -44,3 +44,7 @@ The summary plots are reconstructed from the saved CSVs and are not pixel-perfec
 Open [03_hidden_state_classification.ipynb](03_hidden_state_classification.ipynb) in Google Colab, enable a GPU, then run cells top-to-bottom. The GPU accelerates transformer feature extraction and SAE training, while CPU routines are used for several classical methods.
 
 **Additional scope note:** Findings depend on the dataset, model, pooling and feature dimensions, train/test split, random seeds and classifier hyperparameters. This is an exploratory study.
+
+## Executed Google Colab notebook
+
+[View executed notebook with saved outputs](https://colab.research.google.com/drive/1OkiCF16IhP-Pggox1YR3NtmDO1UxfkQQ?usp=sharing) — the shared Colab copy showing the experiment run. For the version-controlled source, use the notebook linked above in this repository. The shared notebook is viewable without signing in (checked by the repository owner in a private browsing window).
