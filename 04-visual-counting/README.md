@@ -51,3 +51,7 @@ Open the notebook in Google Colab, select a GPU, and run from top to bottom. It 
 - The 6–8-shape result is extrapolation in count under similar generation rules, not arbitrary out-of-distribution generalization.
 - The notebook evaluates the first (in-distribution) test set each epoch, so that set should be treated as validation rather than an untouched final test set if it influenced training decisions.
 - An optional pooled-head baseline exists in the notebook but was disabled for this run. No comparative claim between heads is supported.
+
+## Executed Google Colab notebook
+
+[View executed notebook with saved outputs](https://colab.research.google.com/drive/1UODrQBCzHL105XqkZBieUzE49OvF3DLn?usp=sharing) — the shared Colab copy showing the experiment run. For the version-controlled source, use the notebook linked above in this repository. The shared notebook is viewable without signing in (checked by the repository owner in a private browsing window).
